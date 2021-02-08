@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from "react-router-dom";
 
-export default class Menu extends React.Component {
+const Menu = () => (
+    <Fragment>
+        <p><Link to="/">Home</Link></p>
+        <p><Link to="/table">Table</Link></p>
+        <p><Link to="/chart">Chart</Link></p>
+    </Fragment>
+);
 
-    render() {
-        return (
-            <div>
-                <p><Link to="/table">Table</Link></p>
-                <p><Link to="/chart">Chart</Link></p>
-            </div>
-        );
-    }
-
-}
+export default Menu;

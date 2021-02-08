@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Should render 1`] = `
+<section>
+  <p>
+    <a
+      href="/"
+    >
+      Home
+    </a>
+  </p>
+  <p>
+    <a
+      href="/table"
+    >
+      Table
+    </a>
+  </p>
+  <p>
+    <a
+      href="/chart"
+    >
+      Chart
+    </a>
+  </p>
+</section>
+`;

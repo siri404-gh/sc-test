@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart Should render with props 1`] = `
+<section>
+  <canvas
+    height="400"
+    id="canvas"
+    width="600"
+  />
+</section>
+`;
+
+exports[`Chart Should render without props 1`] = `<section />`;
