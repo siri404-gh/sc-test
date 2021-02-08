@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const cones = require('./cones.json');
+const cones = require('./tests/cones.json');
 
 module.exports = {
   mode: 'development',
