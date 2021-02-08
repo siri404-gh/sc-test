@@ -7,7 +7,18 @@ import App from '../src/app';
 
 describe('App', () => {
     let container;
-
+    const fakeResponse = {
+      name: "Joni Baez",
+      age: "32",
+      address: "123, Charming Avenue"
+    };
+  
+    global.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(fakeResponse),
+      })
+    );
+    
     beforeEach(() => {
         container = document.createElement('section');
         document.body.appendChild(container);
@@ -19,27 +30,14 @@ describe('App', () => {
         container = null;
     });
 
-    it('Should render', () => {
-        act(() => {
-            render(<BrowserRouter>
-                <App />
-            </BrowserRouter>, container);
+    it('Should render', async () => {
+        await act(async () => {
+            render(<App />, container);
         });
         expect(container).toMatchSnapshot();
     });
 
     it('Should set cones', async () => {
-        const fakeResponse = {
-            name: "Joni Baez",
-            age: "32",
-            address: "123, Charming Avenue"
-          };
-        
-          global.fetch = jest.fn().mockImplementation(() =>
-            Promise.resolve({
-              json: () => Promise.resolve(fakeResponse),
-            })
-          );
         
           await act(async () => {
             render(<App />, container);

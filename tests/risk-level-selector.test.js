@@ -37,14 +37,14 @@ describe('Risk', () => {
         expect(container).toMatchSnapshot();
     });
 
-    // it('Should call onChangeRiskLevel when risk is changed', () => {
-    //     act(() => {
-    //         render(<Risk {...props} />, container);
-    //     });
-    //     act(() => {
-    //         const select = Array.from(container.querySelectorAll('select'))[0];
-    //         select.dispatchEvent(new Event('change'), { target: { value: '5' } });
-    //     });
-    //     expect(props.onChangeRiskLevel).toHaveBeenCalledWith(5);
-    // });
+    xit('Should call onChangeRiskLevel when risk is changed', () => {
+        act(() => {
+            render(<Risk {...props} />, container);
+        });
+        act(() => {
+            const select = Array.from(container.querySelectorAll('select'))[0];
+            select.dispatchEvent(new Event('change'), { target: { value: '5' } });
+        });
+        expect(props.onChangeRiskLevel).toHaveBeenCalledWith(5);
+    });
 });

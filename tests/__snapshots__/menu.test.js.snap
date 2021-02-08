@@ -4,21 +4,21 @@ exports[`Menu Should render 1`] = `
 <section>
   <p>
     <a
-      href="/"
+      to="/"
     >
       Home
     </a>
   </p>
   <p>
     <a
-      href="/table"
+      to="/table"
     >
       Table
     </a>
   </p>
   <p>
     <a
-      href="/chart"
+      to="/chart"
     >
       Chart
     </a>

@@ -5,10 +5,11 @@ import RiskLevelSelector from './risk-level-selector';
 import Table from './table';
 import Chart from './chart';
 import 'isomorphic-fetch';
+import { Link } from "react-router-dom";
 
 const App = () => {
     const [riskLevel, setRiskLevel] = useState(10);
-    const [cones, setCones] = useState(null);
+    const [cones, setCones] = useState([]);
     const [initialSum, setInitialSum] = useState(10000);
 
     const onChangeRiskLevel = riskLevel => setRiskLevel(riskLevel);
@@ -21,12 +22,12 @@ const App = () => {
         })();
     }, []);
 
-    if (!cones) return null;
+    if (!cones.length) return null;
 
     return (
         <Router>
             <Fragment>
-                <Menu />
+                <Menu tag={Link} />
                 <RiskLevelSelector riskLevel={riskLevel} onChangeRiskLevel={onChangeRiskLevel} />
                 Initial Sum <input type='number' value={initialSum} onChange={e => setInitialSum(+e.target.value)} />
                 <Switch>

@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react';
-import { Link } from "react-router-dom";
 
-const Menu = () => (
-    <Fragment>
-        <p><Link to="/">Home</Link></p>
-        <p><Link to="/table">Table</Link></p>
-        <p><Link to="/chart">Chart</Link></p>
-    </Fragment>
-);
+const Menu = ({ tag }) => {
+    const Tag = tag;
+
+    return (
+        <Fragment>
+            <p><Tag to="/">Home</Tag></p>
+            <p><Tag to="/table">Table</Tag></p>
+            <p><Tag to="/chart">Chart</Tag></p>
+        </Fragment>
+    );
+};
+
+Menu.defaultProps = {
+    tag: 'a',
+};
 
 export default Menu;

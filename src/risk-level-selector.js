@@ -6,7 +6,6 @@ const RiskLevelSelector = ({ minRiskLevel, maxRiskLevel, onChangeRiskLevel }) =>
     const options = [];
 
     const onSelectChange = e => {
-        console.log('======', e.target.value);
         onChangeRiskLevel(parseInt(e.target.value));
     }
     
